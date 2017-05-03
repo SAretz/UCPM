@@ -5,7 +5,7 @@ class Rank{
 
     public $ID = "";
     public $Name = "";
-    public $NeuerBericht = "";
+    public $Rang = "";
 
     public function _construct() {
 
