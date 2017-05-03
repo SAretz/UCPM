@@ -2,9 +2,9 @@
 
 <?php
 
-$role = getRole(2);
+$role = getRole(3);
 
 ?>
 
 
-<button class="btn btn-primary" <?php if(!$role->NeuerBericht == 1) echo "disabled" ?>>Neuer Bericht</button>
+<button class="btn btn-primary" <?php if($role->Rang < 3) echo "disabled" ?>>Neuer Bericht</button>
