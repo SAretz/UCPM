@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Niklas
- * Date: 03.05.2017
- * Time: 20:29
- */
-?>
-
     <div class="row">
     <div class="col-md-9">
 
