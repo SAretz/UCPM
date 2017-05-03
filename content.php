@@ -24,6 +24,12 @@ if(isset($_GET["page"]))
                 <li>
                     <a href="?page=berichte">Berichte</a>
                 </li>
+                <li>
+                    <a href="?page=projekt">Projekt</a>
+                </li>
+                <li>
+                    <a href="?page=feedback">Feedback</a>
+                </li>
             </ul>
         </div>
         <div class="col-sm-9">

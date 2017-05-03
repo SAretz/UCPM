@@ -52,6 +52,26 @@
     </div>
 </div>
 
+<div class="row">
+    <table class="table table-striped">
+        <tr>
+            <td>13:00</td>
+            <td>14:00</td>
+        </tr>
+        <tr>
+            <td>12:00</td>
+            <td>14:00</td>
+        </tr><tr>
+            <td>10:00</td>
+            <td>14:00</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>7</td>
+        </tr>
+
+    </table>
+</div>
 
 
 
