@@ -26,7 +26,7 @@
             $datum = date("d.m.Y");
             $uhrzeit = date("H:i");
             echo $datum," - ",$uhrzeit," Uhr";
-            ?>
+            ?> 
 
         </div>
     </div>
