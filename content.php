@@ -11,10 +11,17 @@ if(isset($_GET["page"]))
 
 <div class="container">
     <div class="row">
+        <div class="col-sm-12">
+            <h1>WayneSchlegel Inc.</h1>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-3">
             <ul>
                 <li>
                     <a href="?page=home">Home</a>
+                </li>
+                <li>
                     <a href="?page=berichte">Berichte</a>
                 </li>
             </ul>
