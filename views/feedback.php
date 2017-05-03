@@ -7,10 +7,6 @@
  */
 ?>
 
-<html lang="en">
-<style type="text/css">
-    body { background: #d3d3d3 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-</style>
     <div class="row">
     <div class="col-md-9">
 
@@ -50,49 +46,42 @@
              </div>
 
 
-          </div>
-          <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <div class="radio">
+                <label>
+                  <input type="radio" name="bewertung" id="id1" value="1" checked>
+                  1 Stern
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                  <input type="radio" name="bewertung" id="id2" value="2">
+                  2 Sterne
+                </label>
+            </div>
 
+            <div class="radio">
+              <label>
+                  <input type="radio" name="bewertung" id="id2" value="2">
+                  3 Sterne
+              </label>
+            </div>
 
-              <div class="radio">
-                  <label>
-                      <input type="radio" name="bewertung" id="id1" value="1" checked>
-                      1 Stern
-                  </label>
-              </div>
-              <div class="radio">
-                  <label>
-                      <input type="radio" name="bewertung" id="id2" value="2">
-                      2 Sterne
-                  </label>
-              </div>
+            <div class="radio">
+              <label>
+                  <input type="radio" name="bewertung" id="id2" value="2">
+                  4 Sterne
+              </label>
+            </div>
 
-              <div class="radio">
-                  <label>
-                      <input type="radio" name="bewertung" id="id2" value="2">
-                      3 Sterne
-                  </label>
-              </div>
-
-              <div class="radio">
-                  <label>
-                      <input type="radio" name="bewertung" id="id2" value="2">
-                      4 Sterne
-                  </label>
-              </div>
-
-              <div class="radio">
-                  <label>
-                      <input type="radio" name="bewertung" id="id2" value="2">
-                      5 Sterne
-                  </label>
-              </div>
-
-
-
-          </div>
-
-
+            <div class="radio">
+              <label>
+                  <input type="radio" name="bewertung" id="id2" value="2">
+                  5 Sterne
+              </label>
+            </div>
+        </div>
         <div class="row">
 
             <div class="col-md-7">
@@ -104,13 +93,5 @@
                 <button type="button" class="btn btn-warning">Submit</button>
 
             </div>
-            <div class="col-md-4">
-
-
-            </div>
         </div>
-
-
-
 </div>
-</html>
