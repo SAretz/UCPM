@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__."/database.php";
+
 $site = "home";
 
 if(isset($_GET["page"]))
