@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Mai 2017 um 14:20
+-- Erstellungszeit: 03. Mai 2017 um 22:08
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 5.6.30
 
@@ -49,16 +49,18 @@ INSERT INTO `feedback` (`ID`, `Bewertung`, `Kurztext`, `Projekt`) VALUES
 CREATE TABLE `rank` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
-  `NeuerBericht` tinyint(1) NOT NULL DEFAULT '0'
+  `Rang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `rank`
 --
 
-INSERT INTO `rank` (`ID`, `Name`, `NeuerBericht`) VALUES
-(1, 'Abteilungsleiter', 1),
-(2, 'Gast', 0);
+INSERT INTO `rank` (`ID`, `Name`, `Rang`) VALUES
+(1, 'Gast', 1),
+(2, 'Mitarbeiter', 2),
+(3, 'Abteilungleiter', 3),
+(4, 'Geschäftleitung', 4);
 
 -- --------------------------------------------------------
 
@@ -70,6 +72,7 @@ CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
   `Passwort` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
   `Rang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -108,7 +111,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT für Tabelle `rank`
 --
 ALTER TABLE `rank`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
