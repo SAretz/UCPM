@@ -2,7 +2,7 @@
     <div class="col-md-9">
 
 
-        <h1>Feedback-Runde<small> - Wayne Schlegel INC.</small></h1>
+        <h1>Feedback-Runde</h1>
 
 
 
@@ -13,7 +13,7 @@
             $datum = date("d.m.Y");
             $uhrzeit = date("H:i");
             echo $datum," - ",$uhrzeit," Uhr";
-            ?> 
+            ?>
 
         </div>
     </div>
