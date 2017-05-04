@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Mai 2017 um 22:08
+-- Erstellungszeit: 04. Mai 2017 um 08:54
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 5.6.30
 
@@ -77,6 +77,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Daten für Tabelle `user`
+--
+
+INSERT INTO `user` (`ID`, `Name`, `Passwort`, `Email`, `Rang`) VALUES
+(1, 'Sebastian', 'Test', 'Sebastian.Aretz@alumni.fh-aachen.de', 4);
+
+--
 -- Indizes der exportierten Tabellen
 --
 
@@ -116,7 +123,7 @@ ALTER TABLE `rank`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
