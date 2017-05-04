@@ -2,14 +2,33 @@ body {
     background: #d3d3d3;
 }
 
-.bericht ul {
-    padding: 0; !important;
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav li a{
+    color:#000000;
+}
+
+nav li a:hover{
+    color:#ffffff;
+}
+
+.nav>li>a:hover {
+    background:#2b669a;
 }
 
 .berichte li {
-    list-style-type: none;
     width: 100%;
+    border-radius: 5px;
+    padding:5px;
 }
 .berichte li:hover {
-    background: #8a8a8a;
+    background: #2b669a;
+    color:#ffffff;
+}
+
+#banner {
+    margin-bottom: 25px;
 }

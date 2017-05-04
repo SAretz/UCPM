@@ -22,7 +22,26 @@
     </div>
 </div>
 
+<div class="row">
+    <table class="table table-striped">
+        <tr>
+            <td>13:00</td>
+            <td>14:00</td>
+        </tr>
+        <tr>
+            <td>12:00</td>
+            <td>14:00</td>
+        </tr><tr>
+            <td>10:00</td>
+            <td>14:00</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>7 Std.</td>
+        </tr>
 
+    </table>
+</div>
 <div class="row">
     <div class="col-md-4">
 
@@ -52,26 +71,7 @@
     </div>
 </div>
 
-<div class="row">
-    <table class="table table-striped">
-        <tr>
-            <td>13:00</td>
-            <td>14:00</td>
-        </tr>
-        <tr>
-            <td>12:00</td>
-            <td>14:00</td>
-        </tr><tr>
-            <td>10:00</td>
-            <td>14:00</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>7</td>
-        </tr>
 
-    </table>
-</div>
 
 
 
