@@ -19,43 +19,44 @@
         <div class="col-md-4">
         </div>
     </div>
+    <form method="post" action="./functions.php">
     <div class="row">
          <div class="col-md-8">
              <div class="form-group">
                  <label for="comment">Feedback:</label>
-                 <textarea class="form-control" rows="5" id="comment"></textarea>
+                 <textarea class="form-control" name="Kurztext" rows="5" id="comment"></textarea>
              </div>
         </div>
         <div class="col-md-4">
             <div class="radio">
                 <label>
-                    <input type="radio" name="bewertung" id="id1" value="1" checked>
+                    <input type="radio" name="Bewertung" id="id1" value="1" checked>
                     1 Stern
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="bewertung" id="id2" value="2">
+                    <input type="radio" name="Bewertung" id="id2" value="2">
                     2 Sterne
                 </label>
             </div>
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="bewertung" id="id2" value="2">
+                    <input type="radio" name="Bewertung" id="id2" value="3">
                     3 Sterne
                 </label>
             </div>
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="bewertung" id="id2" value="2">
+                    <input type="radio" name="Bewertung" id="id2" value="4">
                     4 Sterne
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="bewertung" id="id2" value="2">
+                    <input type="radio" name="Bewertung" id="id2" value="5">
                     5 Sterne
                 </label>
             </div>
@@ -64,7 +65,8 @@
             <div class="col-md-7">
             </div>
             <div class="col-md-1">
-                <button type="button" class="btn btn-warning">Submit</button>
+                <input type="hidden" name="Projekt" value="<?php echo $_GET['projekt'] ?>">
+                <button type="submit" value="feedback" name="submit" class="btn btn-warning">Submit</button>
             </div>
         </div>
     </div>

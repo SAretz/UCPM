@@ -16,7 +16,7 @@ if(isset($_GET["page"]))
         </div>
     </div>
     <div class="row">
-        <nav class="col-sm-3">
+        <nav class="col-sm-3 wrapper">
             <ul class="nav nav-pills nav-stacked">
                 <li>
                     <a href="?page=home">Home</a>
@@ -28,11 +28,14 @@ if(isset($_GET["page"]))
                     <a href="?page=projekt">Projekt</a>
                 </li>
                 <li>
-                    <a href="?page=feedback">Feedback</a>
+                    <a href="?page=feedback&projekt=1">Feedback</a>
+                </li>
+                <li>
+                    <a href="?page=konzepte">Konzepte</a>
                 </li>
             </ul>
         </nav>
-        <div class="col-sm-9">
+        <div class="col-sm-8 wrapper">
             <?php require_once "views/".$site.".php"; ?>
         </div>
     </div>

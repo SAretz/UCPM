@@ -32,3 +32,12 @@ nav li a:hover{
 #banner {
     margin-bottom: 25px;
 }
+
+.wrapper {
+    border-radius: 0.25rem;
+    background: #ffffff;
+    padding: 25px;
+    border: 0.1px solid #bfbfbf;
+    margin:0 5px;
+}
+
