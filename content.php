@@ -13,6 +13,14 @@ if(isset($_GET["page"]))
     <div class="row" id="banner">
         <div class="col-sm-12">
             <h1>WayneSchlegel Inc.</h1>
+
+            <li>
+                <a href="?page=login">Login</a>
+            </li>
+            <li>
+                <a href="?page=register">Registrieren</a>
+            </li>
+
         </div>
     </div>
     <div class="row">
@@ -33,6 +41,7 @@ if(isset($_GET["page"]))
                 <li>
                     <a href="?page=konzepte">Konzepte</a>
                 </li>
+
             </ul>
         </nav>
         <div class="col-sm-8 wrapper">
