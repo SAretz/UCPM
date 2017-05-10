@@ -119,7 +119,7 @@ class Database {
 
         $error = $stmt->error;
 
-        $model = new BaseViewModel();
+        $model = new stdClass();
 
         if ($status && $error == '') {
             $model->data = $obj;

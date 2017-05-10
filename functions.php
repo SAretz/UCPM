@@ -39,9 +39,15 @@ function konzept_neu()
     $konzept->Name = $_POST['Name'];
     $konzept->Text = $_POST['Text'];
     $konzept->Letzter_Bearbeiter = 1;
-    $konzept->Zeit= $_POST['Zeit'];
+    $konzept->Zeit= date("d.m.Y")." ".date("H:i");
+    $db->Insert($konzept);
 
-    setTimes();
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '?page=konzepte';
+    header("Location: http://$host$uri/$extra");
+    exit();
+    
 }
 
 function konzept()
@@ -50,9 +56,11 @@ function konzept()
     $datum = date("d.m.Y");
     $uhrzeit = date("H:i");
     $db = new Database();
-    $konzept = $db->SelectOne(new Konzepte(),$_POST[id]);
+    $konzept = $db->SelectOne(new Konzepte(),$_POST['ID']);
     $konzept->Text = $_POST['Text'];
+    $konzept->Letzter_Bearbeiter = 1;
     $konzept->Zeit = date("d.m.Y")." ".date("H:i");
+    $db->Update($konzept);
     setTimes();
 }
 

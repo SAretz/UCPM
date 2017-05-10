@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Mai 2017 um 21:51
+-- Erstellungszeit: 10. Mai 2017 um 22:58
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 5.6.30
 
@@ -52,7 +52,7 @@ CREATE TABLE `konzepte` (
   `Name` varchar(50) NOT NULL,
   `Text` longtext NOT NULL,
   `Letzter_Bearbeiter` int(11) NOT NULL,
-  `Zeit` varchar(15) NOT NULL
+  `Zeit` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -60,8 +60,10 @@ CREATE TABLE `konzepte` (
 --
 
 INSERT INTO `konzepte` (`ID`, `Name`, `Text`, `Letzter_Bearbeiter`, `Zeit`) VALUES
-(1, 'Test Konzept 1', 'Dies ist ein Test Konzept an welchem mehrere Leute arbeiten können.', 0, ''),
-(2, 'Konzept 2', 'Dies ist ein Test Konzept an welchem mehrere Leute arbeiten können.', 0, '');
+(1, 'Test Konzept 1', 'Test', 0, '10.05.2017 22:0'),
+(2, 'Konzept 2', 'Konzept zur Belustigung der Mitarbeiter \r\n-> Bar in die Lounge bauen\r\n->Lounge bauen\r\n->Mitarbeiter für Lounge besuch bezahlen\r\n->Teste das auch', 0, '10.05.2017 22:4'),
+(4, 'Test', 'Dies ist ein neues Konzept', 1, '10.05.2017 22:5'),
+(5, 'Geil', 'Funktioniert Sehr schön', 1, '10.05.2017 22:56');
 
 -- --------------------------------------------------------
 
@@ -110,7 +112,12 @@ INSERT INTO `times` (`ID`, `Projekt`, `Von`, `Bis`) VALUES
 (6, 1, '13:31', '15:32'),
 (7, 1, '16:23', '23:32'),
 (8, 2, '10:33', '11:22'),
-(10, 1, '', '21:49');
+(13, 1, '22:03', '22:03'),
+(14, 2, '22:04', '22:05'),
+(15, 2, '22:42', '22:43'),
+(16, 2, '22:43', '22:43'),
+(17, 0, '22:45', '22:45'),
+(18, 5, '22:56', '22:56');
 
 -- --------------------------------------------------------
 
@@ -180,7 +187,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT für Tabelle `konzepte`
 --
 ALTER TABLE `konzepte`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT für Tabelle `rank`
 --
@@ -190,7 +197,7 @@ ALTER TABLE `rank`
 -- AUTO_INCREMENT für Tabelle `times`
 --
 ALTER TABLE `times`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --

@@ -28,33 +28,15 @@
     </table>
 </div>
 <div class="row">
-    <div class="col-md-4">
-        <input type="time" name="Von" class="form-control" placeholder="von">
-    </div>
-    <div class="col-md-4">
-        <input type="time" name="Bis" class="form-control" placeholder="bis">
-    </div>
-    <div class="col-md-3">
-    </div>
-</div>
-<div class="row">
     <div class="col-md-7">
     </div>
     <div class="col-md-1">
         <br>
         <input type="hidden" name="Projekt" value="<?php echo $_GET['projekt'] ?>">
-        <?php
-        if($_GET['projekt'] != "new")
-        {
-            echo '<button type="submit" name="submit" value="konzept" class="btn btn-warning">Submit Time</button>';
-        }
-        else
-        {
-            echo '<button type="submit" name="submit" value="konzept_neu" class="btn btn-warning">Submit Time</button>';
-        }
+        <input type="hidden" name="ID" value="<?php echo $konzept->ID; ?>">
+        <input type="hidden" name="Von" value="<?php echo date("H:i")?>">
+        <button type="submit" name="submit" value="konzept" class="btn btn-warning">Senden</button>;
 
-
-        ?>
     </div>
 </div>
 
