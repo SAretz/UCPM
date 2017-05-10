@@ -1,3 +1,43 @@
 body {
     background: #d3d3d3;
 }
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav li a{
+    color:#000000;
+}
+
+nav li a:hover{
+    color:#ffffff;
+}
+
+.nav>li>a:hover {
+    background:#2b669a;
+}
+
+.berichte li {
+    width: 100%;
+    border-radius: 5px;
+    padding:5px;
+}
+.berichte li:hover {
+    background: #2b669a;
+    color:#ffffff;
+}
+
+#banner {
+    margin-bottom: 25px;
+}
+
+.wrapper {
+    border-radius: 0.25rem;
+    background: #ffffff;
+    padding: 25px;
+    border: 0.1px solid #bfbfbf;
+    margin:0 5px;
+}
+
