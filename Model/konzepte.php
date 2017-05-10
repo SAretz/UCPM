@@ -6,6 +6,8 @@ class Konzepte{
     public $ID = "";
     public $Name = "";
     public $Text = "";
+    public $Letzter_Bearbeiter = "";
+    public $Zeit = "";
 
 
     public function _construct() {

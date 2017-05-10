@@ -8,12 +8,7 @@ require_once __DIR__."/database.php";
 
 if(isset($_POST['submit']))
 {
-    if($_POST['submit'] == "feedback") {
-        feedback();
-    }
-    else if($_POST['submit'] == "time") {
-        setTimes();
-    }
+    $_POST['submit']();
 }
 
 function getRole($id) {
@@ -35,6 +30,30 @@ function sendMails($id, $message) {
     foreach($result AS $user) {
         mail($user->Email, $betreff, $text, $from);
     }
+}
+
+function konzept_neu()
+{
+    $db = new Database();
+    $konzept = new Konzepte();
+    $konzept->Name = $_POST['Name'];
+    $konzept->Text = $_POST['Text'];
+    $konzept->Letzter_Bearbeiter = 1;
+    $konzept->Zeit= $_POST['Zeit'];
+
+    setTimes();
+}
+
+function konzept()
+{
+
+    $datum = date("d.m.Y");
+    $uhrzeit = date("H:i");
+    $db = new Database();
+    $konzept = $db->SelectOne(new Konzepte(),$_POST[id]);
+    $konzept->Text = $_POST['Text'];
+    $konzept->Zeit = date("d.m.Y")." ".date("H:i");
+    setTimes();
 }
 
 function feedback()
@@ -59,12 +78,12 @@ function setTimes(){
     $times = new Times();
     $times->Projekt = $_POST['Projekt'];
     $times->Von = $_POST['Von'];
-    $times->Bis = $_POST['Bis'];
+    $times->Bis = date("H:i");
     $db->Insert($times);
 
     $host  = $_SERVER['HTTP_HOST'];
     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = '?page=projekt&projekt='.$times->Projekt;
+    $extra = '?page=konzepte_details&projekt='.$times->Projekt;
     header("Location: http://$host$uri/$extra");
     exit();
 
