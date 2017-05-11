@@ -10,7 +10,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=uscp', 'root', '');
 <body>
 
 <?php
-$showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
 
 if(isset($_GET['register'])) {
     $error = false;
@@ -20,56 +19,48 @@ if(isset($_GET['register'])) {
     $passwort2 = $_POST['passwort2'];
 
 
-    if(strlen($name) == 0) {
+    if (strlen($name) == 0) {
         echo 'Bitte einen gültigen Namen eingeben<br>';
         $error = true;
     }
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
         $error = true;
     }
-    if(strlen($passwort) == 0) {
+    if (strlen($passwort) == 0) {
         echo 'Bitte ein Passwort angeben<br>';
         $error = true;
     }
-    if($passwort != $passwort2) {
+    if ($passwort != $passwort2) {
         echo 'Die Passwörter müssen übereinstimmen<br>';
         $error = true;
     }
 
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
-    if(!$error) {
+    if (!$error) {
         $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
         $result = $statement->execute(array('email' => $email));
         $user = $statement->fetch();
 
-        if($user !== false) {
+        if ($user !== false) {
             echo 'Diese E-Mail-Adresse ist bereits vergeben<br>';
-            $error = true;
+           // $error = true;
         }
     }
 
-    //Keine Fehler, wir können den Nutzer registrieren
-    if(!$error) {
-        $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
-        $statement = $pdo->prepare("INSERT INTO user (Name, Passwort, Email, Rang) VALUES (:username, :passwort, :email, 1)");
-        $result = $statement->execute(array('username' => $name,'email' => $email, 'passwort' => $passwort_hash));
-
-        if($result) {
-            echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
-            $showFormular = false;
-        } else {
-            echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
-        }
-    }
 }
 
-if($showFormular) {
-    ?>
 
-    <form action="?register=1" method="post">
+
+    //Keine Fehler, wir können den Nutzer registrieren
+    user_einfuegen();
+
+
+?>
+
+    <form action="?register=1" method="post" name="form1">
         Name:<br>
         <input type="text" size="40" maxlength="250" name="username"><br><br>
 
@@ -82,12 +73,10 @@ if($showFormular) {
         Passwort wiederholen:<br>
         <input type="password" size="40" maxlength="250" name="passwort2"><br><br>
 
-        <input type="submit" value="register">
+        <input type="submit" value="Registrieren">
     </form>
 
-    <?php
-} //Ende von if($showFormular)
-?>
+
 
 </body>
 </html>

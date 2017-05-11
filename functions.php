@@ -44,6 +44,29 @@ function konzept_neu()
     setTimes();
 }
 
+function user_einfuegen()
+{
+
+    $db = new Database();
+    $user = new User();
+
+    $user->Name =$_POST['name'];
+    $user->Email =$_POST['email'];
+    $user->Passwort =$_POST['passwort'];
+
+    $db->Insert($user);
+
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+
+
+    $extra = '?page=register';
+    header("Location: http://$host$uri/$extra");
+    exit();
+
+
+}
+
 function konzept()
 {
 
