@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-1">
                 <input type="hidden" name="Projekt" value="<?php echo $_GET['projekt'] ?>">
-                <button type="submit" value="feedback" name="submit" class="btn btn-warning">Submit</button>
+                <button type="submit" value="feedback" name="submit" class="btn btn-primary">Senden</button>
             </div>
         </div>
     </div>

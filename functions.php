@@ -18,6 +18,13 @@ function getRole($id) {
     return $role;
 }
 
+function getUser($id) {
+    $db = new Database();
+    $user = $db->SelectOne(new User(),$id);
+
+    return $user;
+}
+
 function sendMails($id, $message) {
     $db = new Database();
     $result = $db->Select(new User);
@@ -32,6 +39,14 @@ function sendMails($id, $message) {
     }
 }
 
+function weiterleitung($page){
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '?page='.$page;
+    header("Location: http://$host$uri/$extra");
+    exit();
+}
+
 function konzept_neu()
 {
     $db = new Database();
@@ -42,12 +57,8 @@ function konzept_neu()
     $konzept->Zeit= date("d.m.Y")." ".date("H:i");
     $db->Insert($konzept);
 
-    $host  = $_SERVER['HTTP_HOST'];
-    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = '?page=konzepte';
-    header("Location: http://$host$uri/$extra");
-    exit();
-    
+    weiterleitung("konzepte");
+
 }
 
 function konzept()
@@ -58,10 +69,19 @@ function konzept()
     $db = new Database();
     $konzept = $db->SelectOne(new Konzepte(),$_POST['ID']);
     $konzept->Text = $_POST['Text'];
-    $konzept->Letzter_Bearbeiter = 1;
+    $konzept->Letzter_Bearbeiter = $_POST['Bearbeiter'];
     $konzept->Zeit = date("d.m.Y")." ".date("H:i");
+    if($_POST['Fertig'] == "on")
+    {
+        $konzept->Fertig = 1;
+    }
+    else{
+        $konzept->Fertig = 0;
+    }
+
     $db->Update($konzept);
     setTimes();
+
 }
 
 function feedback()
@@ -73,11 +93,7 @@ function feedback()
     $feedback->Projekt = $_POST['Projekt'];
     $db->Insert($feedback);
 
-    $host  = $_SERVER['HTTP_HOST'];
-    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = '?page=projekt';
-    header("Location: http://$host$uri/$extra");
-    exit();
+    weiterleitung("konzepte");
 
 }
 
@@ -89,11 +105,7 @@ function setTimes(){
     $times->Bis = date("H:i");
     $db->Insert($times);
 
-    $host  = $_SERVER['HTTP_HOST'];
-    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = '?page=konzepte_details&projekt='.$times->Projekt;
-    header("Location: http://$host$uri/$extra");
-    exit();
+    weiterleitung("konzepte");
 
 
 }
@@ -106,9 +118,28 @@ function getTimes()
 
 }
 
+function login()
+{
+    $db = new Database();
+    $db->where = array("Email"=>$_POST['Email']);
+    $result = $db->Select(new User());
+    session_start();
+    $_SESSION['User'] = $result[0]->ID;
+    $_SESSION['login'] = 1;
+
+    weiterleitung("home");
+}
+
+function logout()
+{
+    session_start();
+    session_destroy();
+    weiterleitung("login");
+}
+
 function getKonzepte()
 {
     $db = new Database();
-    $result = $db->Select(new Konzepte());
+    $result = $db->RawQuery("SELECT konzepte.*, AVG(feedback.Bewertung) AS Durchschnitt FROM `konzepte` JOIN `feedback` ON konzepte.ID = feedback.Projekt GROUP BY feedback.Projekt ORDER BY Durchschnitt DESC");
     return $result;
 }

@@ -8,6 +8,7 @@ class Konzepte{
     public $Text = "";
     public $Letzter_Bearbeiter = "";
     public $Zeit = "";
+    public $Fertig = "";
 
 
     public function _construct() {

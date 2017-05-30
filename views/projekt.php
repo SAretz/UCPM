@@ -1,12 +1,7 @@
 <div class="row">
-    <div class="col-md-9">
-        <h2>Zeiterfassung</h2>
-    </div>
-</div>
-
-<div class="row">
-    <table class="table table-striped">
-        <?php
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <?php
             $times = getTimes();
 
             foreach ($times AS $time)
@@ -24,19 +19,22 @@
                     <?php
                 }
             }
-        ?>
-    </table>
+            ?>
+        </table>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-7">
+        <label>Konzept fertig?</label>
+        <input type="checkbox" name="Fertig">
     </div>
     <div class="col-md-1">
         <br>
         <input type="hidden" name="Projekt" value="<?php echo $_GET['projekt'] ?>">
         <input type="hidden" name="ID" value="<?php echo $konzept->ID; ?>">
         <input type="hidden" name="Von" value="<?php echo date("H:i")?>">
-        <button type="submit" name="submit" value="konzept" class="btn btn-warning">Senden</button>;
-
+        <input type="hidden" name="Bearbeiter" value="<?php echo $_SESSION['User'];?>">
+        <button type="submit" name="submit" value="konzept" class="btn btn-primary">Senden</button>
     </div>
 </div>
 

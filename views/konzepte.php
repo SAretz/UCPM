@@ -1,20 +1,38 @@
 <?php
     $konzepte = getKonzepte();
+    $counter = 0;
+
+
+    if(isset($_SESSION['Rang']))
+    {
+        if($_SESSION['Rang'] >= 3)
+        {
+            ?>
+            <div class="konzept" id="konzept_new">
+                <a href="?page=konzepte_details&projekt=new"><i class="fa fa-plus-circle" aria-hidden="true"></i> Neues Konzept</a>
+            </div>
+            <?php
+        }
+    }
+
+    foreach($konzepte AS $konzept)
+    {
+
+        if($counter % 2 == 0) {
+            ?>
+            <div class="row renamelater">
+            <?php
+            include __DIR__."/konzept_preview.php";
+
+        }
+        else {
+            include __DIR__."/konzept_preview.php";
+            ?>
+            </div>
+            <?php
+        }
+        $counter++;
+
+    }
 ?>
 
-
-<div class="row">
-    <div class="col-sm-12">
-        <div class="list-group">
-            <a href="?page=konzepte_details&projekt=new" class="list-group-item list-group-item-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Neues Konzept</a>
-            <?php
-            foreach($konzepte AS $konzept)
-            {
-                ?>
-                <a class="list-group-item" href="?page=konzepte_details&projekt=<?php echo $konzept->ID ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  <?php echo $konzept->Name ?></a>
-                <?php
-            }
-            ?>
-        </div>
-    </div>
-</div>

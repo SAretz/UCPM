@@ -1,43 +1,167 @@
 body {
-    background: #d3d3d3;
+    /*background:url("../img/background.jpg");*/
+    padding-top: 70px;
+    background: #BDBDBD;
+}
+.container
+{
+    max-width: 950px;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
+.navbar-brand
+{
+    padding-top:0;
 }
 
-nav li a{
-    color:#000000;
+.navbar-brand>img
+{
+    height:50px;
 }
 
-nav li a:hover{
-    color:#ffffff;
+.rahmen
+{
+    padding: 5px;
+    border-radius: 3px;
 }
 
-.nav>li>a:hover {
-    background:#2b669a;
+.diamond
+{
+    background: #5d729a !important;
 }
 
-.berichte li {
-    width: 100%;
-    border-radius: 5px;
+.gold
+{
+    background: #8a811b !important;
+}
+
+.bronze
+{
+    background: #8a5a0d !important;
+}
+
+.konzept
+{
+    background:#eeeeee;
     padding:5px;
-}
-.berichte li:hover {
-    background: #2b669a;
-    color:#ffffff;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+
 }
 
-#banner {
-    margin-bottom: 25px;
+#konzept_new
+{
+    margin-bottom:2em;
 }
 
-.wrapper {
-    border-radius: 0.25rem;
-    background: #ffffff;
-    padding: 25px;
-    border: 0.1px solid #bfbfbf;
-    margin:0 5px;
+#konzept_new>a
+{
+    font-size:1.4em;
+    font-weight: 600;
+}
+
+.konzept img
+{
+    width:100%;
+
+}
+
+.konzept_preview
+{
+    background:#ffffff;
+    min-height: 150px;
+    padding:0 20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+}
+
+.konzept_preview>img
+{
+    width:auto;
+    height: 200px;
+}
+
+.konzept_wrapper
+{
+    margin:10px 0;
+}
+
+.konzept_description
+{
+    margin:10px 0;
+}
+
+form
+{
+    margin:0;
+}
+
+fieldset
+{
+    margin:0;
+}
+
+.renamelater{
+    margin-bottom: 1em;
+}
+
+
+/*++++++++***++++++++++++++++
+Profil
++++++++++++++++++++++++++++*/
+
+div#profil h3
+{
+    font-size: 3em;
+    color: #2A2B2C;
+    margin:10px 0;
+}
+
+div#profil .list-group-item
+{
+    background: #eeeeee;
+}
+
+div#profil .list-group-item>p
+{
+    font-size:1.4em;
+    color:#374140;
+    font-weight: 600;
+}
+
+div#profil .profil_wrapper
+{
+    padding: 5px;
+    background: #eeeeee;
+    border-radius: 5px;
+    border: 1px solid #AAAAAA;
+}
+
+div#profil .profil_wrapper img
+{
+    width: 80%;
+    border-radius: 50%;
+    margin-bottom:2em;
+}
+
+div#profil .profil_wrapper>p
+{
+    font-size:0.8em;
+    text-align: center;
+    width: 100%;
+}
+
+div#profil .profil_wrapper>p.name
+{
+    font-weight: 600;
+}
+
+div#profil .profil_wrapper>p .header
+{
+    font-weight: 600;
+}
+
+div#profil .profil_wrapper>p.about
+{
+    text-align: left;
 }
 
