@@ -165,3 +165,10 @@ div#profil .profil_wrapper>p.about
     text-align: left;
 }
 
+div#archievments .wrapper {
+    padding: 5px;
+    background: #eeeeee;
+    border-radius: 5px;
+    border: 1px solid #AAAAAA;
+    height:5%;
+}

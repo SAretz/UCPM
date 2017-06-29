@@ -143,3 +143,10 @@ function getKonzepte()
     $result = $db->RawQuery("SELECT konzepte.*, AVG(feedback.Bewertung) AS Durchschnitt FROM `konzepte` JOIN `feedback` ON konzepte.ID = feedback.Projekt GROUP BY feedback.Projekt ORDER BY Durchschnitt DESC");
     return $result;
 }
+
+function ajax_shop()
+{
+    session_start();
+    $_SESSION['score'] = $_SESSION['score']-100;
+    return "Test";
+}

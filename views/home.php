@@ -13,6 +13,9 @@
             $_SESSION['login'] = 0;
         }
     }
+
+$_SESSION['score'] = 750;
+$_SESSION['acv'] = 1;
 ?>
 
 <h3>Konzeptportal der WayneSchlegel Inc.</h3>

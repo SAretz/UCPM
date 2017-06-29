@@ -45,6 +45,7 @@ else{
                     ?>
                         <li class="pull-right"><a href="?page=login">Logout</a></li>
                         <li class="pull-right"><a href="?page=profil"><i class="fa fa-user" aria-hidden="true"></i> Profil</a></li>
+                        <li class="pull-right"><a href="?page=shop"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Shop</a></li>
                     <?php
                 }
             ?>
